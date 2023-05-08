@@ -1,0 +1,31 @@
+add(X,Y):- Z is X+Y,write(X),write(' + '),write(Y),
+write(' = '),write(Z).
+sub(X,Y):- Z is X-Y,write(X),write(' - '),write(Y),
+write(' = '),write(Z).
+mul(X,Y):- Z is X*Y,write(X),write(' * '),write(Y),
+write(' = '),write(Z).
+div(_,N):- N=0, write('Division by zero is not permitted!'),nl,!,fail.
+div(X,Y):- Z is X/Y,write(X),write(' / '),write(Y),
+write(' = '),write(Z).
+
+
+Output:-
+For help, use ?- help(Topic). or ?- apropos(Word).
+1 ?- [q1].
+% q1 compiled 0.00 sec, 6 clauses
+true.
+2 ?- add(56,8).
+56 + 8 = 64
+true.
+3 ?- sub(13,6) .
+13 - 6 = 7
+true.
+4 ?- mul(3,35).
+3 * 35 = 105
+true.
+5 ?- div(22,2).
+22 / 2 = 11
+true.
+6 ?- div(3,0).
+Division by zero is not permitted!
+false
