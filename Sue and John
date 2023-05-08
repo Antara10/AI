@@ -1,0 +1,17 @@
+likes(john,Y):- food(Y).
+food(apple).
+food(chicken).
+food(Y):- eat(X,Y),alive(X,Y).
+alive(bill,peanut).
+eat(bill,peanut).
+eat(sue,Y):- eat(bill,Y).
+
+
+Output:-
+1 ?- [q8].
+% q8 compiled 0.00 sec, 8 clauses
+true.
+2 ?- likes(john,peanut).
+true .
+3 ?- eat(sue,X).
+X = peanut
