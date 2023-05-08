@@ -1,0 +1,30 @@
+fiboseries(N):-
+write('Fibonacci seires: '),
+write('0,1, '),
+fib(N,_,_).
+fib(1, 1, 0).
+fib(X, Y1, Y2) :-
+X > 1,
+X1 is X - 1,
+fib(X1, Y2, Y3),
+Y1 is Y2 + Y3,
+write(Y1),write(', ').
+
+
+Output:-
+28 ?- [q4].
+% q4 compiled 0.00 sec, 4 clauses
+true.
+29 ?- fiboseries(5).
+Fibonacci seires: 0,1, 1, 2, 3, 5, 
+true 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? .
+30 ?- fiboseries(8).
+Fibonacci seires: 0,1, 1, 2, 3, 5, 8, 13, 21, 
+true .
+31 ?- fiboseries(10).
+Fibonacci seires: 0,1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 
+true .
