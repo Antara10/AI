@@ -1,0 +1,20 @@
+palin(List) :-
+reverse(List,List).
+reverse(L1,L2) :-
+rev(L1, [], L2),
+write('This is palindrome.').
+rev([],L,L).
+rev([H|L],L2,L3) :-
+rev(L,[H|L2],L3).
+Output:-
+13 ?- [q5].
+% q5 compiled 0.00 sec, 5 clauses
+true.
+14 ?- palin([a,b,c,d,c,b,a]).
+This is palindrome.
+true.
+15 ?- palin([3,4,5,4,3]).
+This is palindrome.
+true.
+16 ?- palin([a,s,d,f,a]).
+false
