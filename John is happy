@@ -1,0 +1,14 @@
+happy(X):-pass(X,history),win(X,lottery).
+pass(X,_):-study(X);lucky(X).
+lucky(john).
+study(not(john)).
+win(X,lottery):-lucky(X).
+
+Output:-
+14 ?- [q11].
+% q11 compiled 0.00 sec, 6 clauses
+true.
+15 ?- happy(A).
+A = john.
+16 ?- happy(john).
+true.
