@@ -1,0 +1,11 @@
+likes(steve,X):- easy(X).
+hard(X):- science(X).
+easy(X):- baskweav(X).
+baskweav(bk301).
+
+Output:-
+% q6 compiled 0.00 sec, 5 clauses
+true.
+47 ?- likes(steve,X).
+X = bk301.
+48 ?-
