@@ -1,0 +1,29 @@
+move(1,X,Y,_):- write('Move top disk from '),
+ write(X),
+ write(' to '),
+ write(Y),nl.
+move(N,X,Y,Z):- N>1,
+ M is N-1,
+ move(M,X,Z,Y),
+ move(1,X,Y,_),
+ move(M,Z,Y,X).
+ 
+ 
+Output:-
+41 ?- [q5].
+% q5 compiled 0.00 sec, 3 clauses
+true.
+42 ?- move(2,left_peg,right_peg, centre_peg).
+Move top disk from left_peg to centre_peg
+Move top disk from left_peg to right_peg
+Move top disk from centre_peg to right_peg
+true .
+43 ?- move(3,left_peg,right_peg, centre_peg).
+Move top disk from left_peg to right_peg
+Move top disk from left_peg to centre_peg
+Move top disk from right_peg to centre_peg
+Move top disk from left_peg to right_peg
+Move top disk from centre_peg to left_peg
+Move top disk from centre_peg to right_peg
+Move top disk from left_peg to right_peg
+true .
